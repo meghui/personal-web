@@ -1,0 +1,53 @@
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin widescreen {
+    @media screen and (max-width: 1920px) {
+      @content;
+    }
+}
+
+@mixin smallscreen {
+    @media screen and (max-width: 1023px) {
+      @content;
+    }
+}
+
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+    background: darken(white, 100%);
+    color: lighten(black, 100%);
+  }
+}
+
+@mixin btn-bg($bg) {
+  background: transparent;
+  border: 1px solid $bg;
+  color: $bg;
+  text-align: center;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  &:hover {
+    background: darken($bg, 8%);
+    transition: all 0.3s ease;
+    color: white;
+  }
+  &:active {
+    background: darken($bg, 25%);
+    color: white;
+  }
+}
