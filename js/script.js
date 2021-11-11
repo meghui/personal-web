@@ -1,5 +1,3 @@
-
-
 //submit message
 var form = document.getElementById("my-form");
 
@@ -160,6 +158,7 @@ function popblog() {
   resume__contact.style.display = "none";
   resume__blog.style.display = "inline";
 }
+
 function popcontact() {
   document.getElementsByClassName("link")[4].style.color = "#65dfc9";
   document.getElementsByClassName("fas")[4].style.color = "#65dfc9";
