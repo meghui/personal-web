@@ -5,24 +5,25 @@
 @function weight($weight-name) {
   @return map-get($font-weights, $weight-name);
 }
-@keyframes toRight {
-  from {left:0px;}
-  to {left:200px;}
+@keyframes fadeinleft {
+  0% {
+    position: absolute;
+    left: -480px;
+    opacity: 0;
+  }
+  100% {
+    position: absolute;
+    left: 0px;
+    opacity: 1;
+  }
 }
-@keyframes backLeft {
-  0%   {left:200px;}
-  100%  {left:0px;}
-}
-@keyframes repeat {
-  
-}
-
 h1 {
   color: $h1-color;
   font-weight: weight("medium");
   font-size: 3rem;
   opacity: 0.8;
 }
+
 h2,
 p {
   color: $text-color;
@@ -699,6 +700,8 @@ main {
       }
     }
   } 
+  
+  }
   @include smallscreen {
     flex-direction: column;
     max-width: 80vw;
@@ -785,5 +788,4 @@ main {
       display: none;
     }
   }
-}
-  
+} 
